@@ -1,11 +1,13 @@
-#Text entry using a custom 10 switch keyboard
-Code and documentation for processing inputs from 10 pushbuttons and converting them to all 26 characters, space, and backspace. 
+#Text entry using a multi-tap QWERTY keyboard
+Code and documentation for processing inputs from 10 pushbuttons and converting them to all 26 Latin characters, space, and backspace.
+
+<img src="img/main.jpg">
 
 Text Entry Technique
 --------------------
-I decided to adapt the [E.161 Multi-tap](https://en.wikipedia.org/wiki/E.161) system for the layout of a traditional querty keyboard, because I have worked on computers in the past and wanted to design my own keyboard. I decided to keep the middle ASDFGHJKL row, and have each one of these characters be double and triple clickable, in a similar manner to the E.161 system. I used the following key mapping, where "Sp" is space and "Bksp" is backspace:
+I wanted to adapt the [E.161 Multi-tap](https://en.wikipedia.org/wiki/E.161) system for the layout of a traditional querty keyboard, because I have worked on computers in the past and wanted to design my own keyboard. I decided to keep the middle ASDFGHJKL row, and have each one of these characters be double and triple clickable, in a similar manner to the E.161 system. I used the following key mapping, where "Sp" is space and "Bksp" is backspace:
 <img src="img/mapping.png">
-The main downside of this mapping is that the space key requires triple clicking the K key. 
+The main downside of this mapping is that the space key requires triple clicking the K key, which can be inconvenient 
 
 I arranged keys like a traditional keyboard, where only the middle row and backspace keys are clickable, and the top and bottom rows are just labels. I shifted the P key to the bottom row to illustrate that it was a triple click.
 
@@ -14,7 +16,7 @@ I arranged keys like a traditional keyboard, where only the middle row and backs
 
 How the Code works
 ------------------
-The code for the keyboard is fairly simple. There are four configurable values, as folows: 
+The code for the keyboard is located [here](code.ino), and it is fairly simple. There are four configurable values, as folows: 
 
 Name         | Default Value (in ms) | Description
 ------------:|:---------------------:|:-----
@@ -57,7 +59,12 @@ Construction
 The keyboard is constructed from clear cast acrylic and birch plywood, and was manufactured on a lasercutter. Two acrylic layers form the baseplate and hold the switches and wiring, and the wood layers provide the main housing for the keys, as well as the cosmetic face. 
 
 Here is a simplified cross section of the keyboard, showing how the keys interact with the pushbuttons: 
+
 <img src="img/cross-section.png">
+
+All 4 layers are clamped together around the edges with M3 screws, so the keyboard can be easily disassembled 
+
+<img src="img/side.jpg">
 
 Bill of Materials
 -----------------
@@ -72,11 +79,20 @@ Bill of Materials
 
 Wiring
 ------
+The wires are soldered onto the back of the keyboard, and connect to a perfboard with an attached header. This allows for easy removal of the microcontroller, so it is not tied to this project. 
+
+<img src="img/back.jpg">
+
+<img src="img/header.jpg">
+
 The wiring diagram of the keyboard is shown below:
 <img src="img/wiring.png">
 
 Reflection
 ----------
+This project was completed as part of an assignment for [Interactive Device Design](https://bcourses.berkeley.edu/courses/1451961), a graduate class at UC Berkeley. My biggest takeaway from this project was how to rapidly iterate on designs with a lasercutter. In the past I have spent lots of time in CAD modeling my designs, and using 3D printing or milling to create them. It was very fun to build the keyboard layer by layer, and figure out on the fly what I needed to do. 
+
+I'm also glad the assignment restriced me to only using 10 switches, because it made me think a bit more about how I would lay them out. Overall, I thought this assignment was great, and had a lot of fun making my keyboard. The next step will be to add a battery, make it wireless, and add the ability to send keystrokes to a computer!
 
 Video
 -----
